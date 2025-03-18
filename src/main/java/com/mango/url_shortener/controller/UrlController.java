@@ -16,10 +16,10 @@ public class UrlController {
     private UrlService urlService;
 
     // Shorten a url
-    @PostMapping("shorten")
+    @PostMapping("/shorten")
     public ResponseEntity<String> shortenUrl(@RequestBody String originalUrl){
         String shortUrl = urlService.shortenUrl(originalUrl);
-        return ResponseEntity.ok("Shortened URL: http://localhost:8080/api/url" + shortUrl);
+        return ResponseEntity.ok("Shortened URL: http://localhost:8080/api/url/" + shortUrl);
     }
 
     // Redirect to original url
